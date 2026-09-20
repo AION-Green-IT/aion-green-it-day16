@@ -92,11 +92,11 @@ export function buildTask1Html(r1: Route1State): string {
   <h2>Findings by area</h2>
   ${areaSections}
 
-  <h2>Effective vs merely informative</h2>
-  <table><thead><tr><th>Candidate metric</th><th>Verdict</th></tr></thead><tbody>${metricRows}</tbody></table>
+  ${r1.metricsAnswered > 0 ? `<h2>Extra · Effective vs merely informative</h2>
+  <table><thead><tr><th>Candidate metric</th><th>Verdict</th></tr></thead><tbody>${metricRows}</tbody></table>` : ""}
 
-  <h2>Short-term vs structural</h2>
-  <table><thead><tr><th>Move</th><th>Horizon</th></tr></thead><tbody>${horizonRows}</tbody></table>
+  ${r1.horizonPlacedCount > 0 ? `<h2>Extra · Short-term vs structural</h2>
+  <table><thead><tr><th>Move</th><th>Horizon</th></tr></thead><tbody>${horizonRows}</tbody></table>` : ""}
 
   <div class="summary">
     <strong>${r1.placedCount} of ${r1.totalSignals} signals placed · ${r1.areasWithApproach} of ${AREAS.length} areas have an improvement approach.</strong>

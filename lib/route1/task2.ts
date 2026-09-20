@@ -333,7 +333,7 @@ export const CONDITIONS: Condition[] = [
 // ---------------------------------------------------------------------------
 
 export const TASK2_FRAMING = {
-  tag: "TASK 2 · DECIDE",
+  tag: "EXTRA · TASK 2 · DECIDE",
   title: "Which line of measures should be prioritised first?",
   minutes: 15,
   instruction: "You can push only one central line of measures first. Assess, choose, and defend your choice — even with incomplete information.",

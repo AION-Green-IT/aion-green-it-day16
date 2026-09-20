@@ -84,10 +84,10 @@ export const ROUTES: Route[] = [
     title: "Route 1 — KPIs, Optimisation & Monitoring",
     cardTitle: "KPIs, Optimisation & Monitoring",
     cardBlurb:
-      "Two short material-then-task pairs. First: why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective rather than merely informative — then diagnose Clarity Digital Services' scattered metrics. Second: continuous optimisation as a PDCA routine, the measurability–informative-value–controllability trade-off, and the three candidate lines of measures — then prioritise which one to build first, under real uncertainty.",
-    deliverable: "Clarity Digital Services — Metrics Diagnosis & Priority Line",
+      "Four short cards — why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective — then one task: diagnose Clarity Digital Services' scattered metrics. Optional extras go further: two more classification exercises, continuous optimisation, and a second task on which line of measures to fund first.",
+    deliverable: "Clarity Digital Services — Metrics Diagnosis",
     levels: [1, 2],
-    minutes: 48,
+    minutes: 25,
     available: true,
   },
   {
@@ -98,10 +98,10 @@ export const ROUTES: Route[] = [
     title: "Route 2 — Management Decision",
     cardTitle: "Management Decision",
     cardBlurb:
-      "Metrics, carbon monitoring and reporting reframed as leadership instruments, not documentation: staging a management model in layers, the senior five-factor trade-off, and how different roles prioritise differently — then Verdeon Digital Governance Group: build the decision-ready management proposal, not a metrics list.",
+      "Two short cards — staging a management model in layers, and how different roles prioritise differently — then two connected tasks at Verdeon Digital Governance Group: sequence the build, then govern it and make the call now. Optional extras add framing, twelve-month decisions and the five-factor trade-off.",
     deliverable: "Verdeon Digital Governance Group — Management Proposal",
     levels: [3],
-    minutes: 31,
+    minutes: 20,
     available: true,
   },
 ];

@@ -24,12 +24,11 @@ export default function DayLanding() {
         <p className="mt-4 text-body text-ash">
           Module 12. Many organisations measure a great deal and manage very little: a figure can be accurate, even
           impressive, and still change nothing because it was never wired to a target, an owner and a decision.
-          Route 1 is two short pairs of material and task: first the vocabulary and six-area diagnostic for why
-          Clarity Digital Services' metrics don't yet steer anything, then the trade-offs behind prioritising which
-          single line of measures to build first, under real budget and data constraints. Route 2 steps up to the
-          management view: at Verdeon Digital Governance Group you reframe KPIs, carbon monitoring and reporting as
-          leadership instruments rather than documentation, and build the decision-ready management proposal that
-          puts them to work — including the one call to make now, despite an incomplete picture.
+          Route 1 is four short cards and one task — the six-area diagnostic for why Clarity Digital Services'
+          metrics don't yet steer anything. Route 2 steps up to the management view: two short cards and two
+          connected tasks at Verdeon Digital Governance Group — sequence the build, then govern it and make the one
+          call to take now, despite an incomplete picture. Every route also has an optional drawer of extra practice;
+          nothing in it is needed for the export.
         </p>
       </div>
 

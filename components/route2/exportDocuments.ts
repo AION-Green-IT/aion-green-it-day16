@@ -78,30 +78,30 @@ export function buildProposalHtml(r2: Route2State): string {
   <h1>${esc(EXPORT.docHeading)}</h1>
   <p class="meta">${esc(r2.name.trim() || "learner")} · ${esc(date)} · Case: ${esc(ENGAGEMENT.company)}</p>
 
-  <h2>1. Strategic relevance</h2>
-  <p>Lens: <strong>${r2.roleLens ? esc(roleById(r2.roleLens).name) : "— not picked"}</strong></p>
-  <ul>${reasonRows}</ul>
-  <p class="muted">${esc(r2.relevanceJustification || "—")}</p>
-
-  <h2>2. Three guiding decisions for the next 12 months</h2>
-  <ul>${guidingRows}</ul>
-
-  <h2>3. Build sequence</h2>
+  <h2>1. Build sequence</h2>
   <ol>${sequenceRows}</ol>
   <p class="muted">First move — ${esc(r2.firstMove || "—")}</p>
 
-  <h2>4. Trade-off priority allocation</h2>
-  <table><thead><tr><th>Factor</th><th>Points</th></tr></thead><tbody>${allocationRows}</tbody></table>
-
-  <h2>5. Governance & responsibility matches</h2>
+  <h2>2. Governance & responsibility matches</h2>
   <table><thead><tr><th>Role</th><th>Responsibilities</th></tr></thead><tbody>${governanceRows}</tbody></table>
 
-  <h2>6. The decision to take now</h2>
+  <h2>3. The decision to take now</h2>
   <div class="closing"><strong>Decision — </strong>${esc(r2.nowDecision || "—")}</div>
   <div class="closing"><strong>Risk of waiting — </strong>${esc(r2.riskOfWaiting || "—")}</div>
 
+  ${r2.extraA ? `<h2>Extra · Strategic relevance</h2>
+  <p>Lens: <strong>${r2.roleLens ? esc(roleById(r2.roleLens).name) : "— not picked"}</strong></p>
+  <ul>${reasonRows}</ul>
+  <p class="muted">${esc(r2.relevanceJustification || "—")}</p>` : ""}
+
+  ${r2.extraB ? `<h2>Extra · Guiding decisions for the next 12 months</h2>
+  <ul>${guidingRows}</ul>` : ""}
+
+  ${r2.extraD ? `<h2>Extra · Trade-off priority allocation</h2>
+  <table><thead><tr><th>Factor</th><th>Points</th></tr></thead><tbody>${allocationRows}</tbody></table>` : ""}
+
   <div class="summary">
-    <strong>Verdeon Digital Governance Group Management Proposal — complete.</strong>
+    <strong>Verdeon Digital Governance Group Management Proposal — sequence, governance and the call now.</strong>
   </div>
 
   <footer>

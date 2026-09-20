@@ -37,7 +37,7 @@ export const R2_KEY_PREFIXES = ["r2:"];
 export const PAGE_INTRO = {
   tag: "ROUTE 2 — MANAGEMENT DECISION",
   title: "From Metrics to a Management Decision",
-  body: "Module 12, Level 3. KPIs, carbon monitoring and reporting only matter once they are reframed as leadership instruments rather than documentation. Four short cards give you that vocabulary — staging a model in layers, the senior five-factor trade-off, and how different roles prioritise differently — then you build a decision-ready management proposal: not a list of metrics, but a decision architecture, defended despite an incomplete picture.",
+  body: "Module 12, Level 3. KPIs, carbon monitoring and reporting only matter once they are reframed as leadership instruments rather than documentation. Two short cards give you that vocabulary — staging a model in layers, and how different roles prioritise differently — then two connected tasks build a decision-ready management proposal: not a list of metrics, but a decision architecture, defended despite an incomplete picture.",
 } as const;
 
 export const ENGAGEMENT = {
@@ -47,8 +47,8 @@ export const ENGAGEMENT = {
   brief:
     "Verdeon Digital Governance Group already runs real Green IT measures, but there is no consistent KPI system, no practicable carbon logic, no effective review process, and no clear ownership. IT, sustainability, controlling, finance, and management all want different things from the same data.",
   mandate:
-    "Budget is limited but management wants visible, credible progress. External reporting requirements are rising. There is a real risk the system becomes too complex to run. Recommend a decision-ready management proposal — a decision architecture, not a metrics list — despite the incomplete picture.",
-  deliverable: "You leave with one document: the Verdeon Digital Governance Group Management Proposal.",
+    "Budget is limited but management wants visible, credible progress. External reporting requirements are rising. There is a real risk the system becomes too complex to run. Recommend a decision-ready management proposal — a decision architecture, not a metrics list — despite the incomplete picture. You do it in two connected parts: sequence the build, then govern it.",
+  deliverable: "You leave with one document: the Verdeon Digital Governance Group Management Proposal. Optional extra practice adds sections to it if you fill them in.",
 } as const;
 
 export const NAME_FIELD = {

@@ -213,6 +213,11 @@ export function StageGovernance() {
         <label htmlFor="r2-now-decision-field" className="block text-caption font-semibold text-ink">
           {NOW_DECISION_FIELD.label}
         </label>
+        {r2.firstMove && (
+          <p className="mt-0.5 text-micro text-ash">
+            <span className="font-semibold text-ink">Your first move from Part 1: </span>&ldquo;{r2.firstMove}&rdquo;
+          </p>
+        )}
         <p className="mt-0.5 text-micro text-ash">{NOW_DECISION_FIELD.instruction}</p>
         <textarea
           id="r2-now-decision-field"

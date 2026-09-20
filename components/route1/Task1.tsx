@@ -2,14 +2,14 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LivePanel } from "@/components/ui/LivePanel";
-import { TASK1_FRAMING, WORK_ASSIGNMENT_T1 } from "@/lib/route1";
+import { TASK1_EXTRA, TASK1_FRAMING, WORK_ASSIGNMENT_T1 } from "@/lib/route1";
 import { DiagnosisBoard } from "./DiagnosisBoard";
 import { EffectivenessSort, HorizonSort } from "./ClassifyTasks";
 import { ReportPanel1 } from "./ReportPanel1";
 import { ExportBar1 } from "./ExportBar1";
 import { useRoute1, domId } from "./useRoute1";
 
-/** Task 1, in full: three stages on one continuous scroll, its own live report and its own export. */
+/** The required task: one diagnosis board, its live report and its own export. */
 export function Task1() {
   const r1 = useRoute1();
 
@@ -34,28 +34,33 @@ export function Task1() {
             </ol>
           </div>
 
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage A — Diagnose</p>
-            <DiagnosisBoard />
-          </div>
-
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage B — Informative vs management-effective</p>
-            <EffectivenessSort />
-          </div>
-
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage C — Short-term vs structural</p>
-            <HorizonSort />
-          </div>
+          <DiagnosisBoard />
         </div>
 
-        <LivePanel title="Metrics Diagnosis" summary={`${r1.placedCount}/${r1.totalSignals} placed · ${r1.metricsAnswered}/${r1.metricStates.length} classified`}>
+        <LivePanel title="Metrics Diagnosis" summary={`${r1.placedCount}/${r1.totalSignals} placed · ${r1.areasWithApproach}/6 areas written`}>
           <ReportPanel1 />
         </LivePanel>
       </div>
 
       <ExportBar1 />
+    </section>
+  );
+}
+
+/** Optional extras on the same material: Stage B and Stage C. Nothing here is needed for the export. */
+export function Task1Extra() {
+  return (
+    <section className="space-y-6">
+      <div>
+        <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">{TASK1_EXTRA.stageB.kicker}</p>
+        <h3 className="mb-3 text-h3 text-ink">{TASK1_EXTRA.stageB.title}</h3>
+        <EffectivenessSort />
+      </div>
+      <div>
+        <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">{TASK1_EXTRA.stageC.kicker}</p>
+        <h3 className="mb-3 text-h3 text-ink">{TASK1_EXTRA.stageC.title}</h3>
+        <HorizonSort />
+      </div>
     </section>
   );
 }

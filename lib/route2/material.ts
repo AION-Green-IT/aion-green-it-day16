@@ -62,12 +62,15 @@ export const MATERIAL: MicroCard<MaterialSectionId>[] = [
     definition: [
       "A management model is built in three layers, in order. Short-term: pick core KPIs, define a pragmatic carbon baseline, assign owners. Medium-term: a proper dashboard, review cycles, richer emissions data. Structural: KPIs and carbon monitoring embedded permanently in governance and management reviews.",
       "Each layer depends on what the one before it produced. Skipping a layer leaves the next one with nothing to work on — structural governance with no short-term footing is a committee with nothing yet to govern.",
-      "The eight twelve-month decisions the task offers are defined, with when to use each, in this card's Read more.",
+      "Your first move is one specific, doable action in the short-term layer, with a named owner and a date — not a restatement of the layer. When data is incomplete, that first move is the call to make now: waiting for perfect data costs time and credibility, so name what gets worse the longer you wait.",
+      "The eight twelve-month decisions used in the optional Stage B are defined, with when to use each, in this card's Read more.",
     ],
     reasoning: [
       "When sequencing any set of moves in the task, ask what each move depends on. A structural move that depends on data no short-term move has captured yet is out of order.",
       "Stage, don't chase perfection: the comparable company in the worked example did not wait for perfect data — that pattern is the one to cite when defending a sequence.",
-      "For the twelve-month decisions, ask of each: what does it need to be in place first, and what does it leave unaddressed? Pick the ones that build footing without committing budget ahead of governance.",
+      "A good first move is concrete: “publish a five-KPI starter set with a named owner for each within four weeks” — not “start the dashboard project”. If you cannot say who does it and by when, it is still a restatement.",
+      "When you name the risk of waiting, say what concretely gets worse — a reporting deadline arriving with no credible figure, momentum lost — not “it would be less perfect”.",
+      "For the optional twelve-month decisions, ask of each: what does it need to be in place first, and what does it leave unaddressed? Pick the ones that build footing without committing budget ahead of governance.",
     ],
     readMoreHint: "decision rules, the eight twelve-month decisions defined, the worked example",
     more: [
@@ -119,7 +122,7 @@ export const MATERIAL: MicroCard<MaterialSectionId>[] = [
     definition: [
       "A CIO, a Head of Sustainability, a Controlling lead and an external Consultant looking at the same data will not make the same call, because each optimises for a different mandate.",
       "The CIO optimises for steering capability. The Head of Sustainability for credibility under scrutiny. Controlling for cost and risk control — the routine processes that collect, reconcile and release figures. The Consultant for structural robustness, independent of any one person's judgement.",
-      "None of the four is wrong. The task asks you to pick a lens and hold it, and to hand each responsibility to the role whose mandate it serves. The four responsibilities are defined in this card's Read more.",
+      "None of the four is wrong. In Part 2 you hand each of four responsibilities to the role whose mandate it serves; the responsibilities are defined in this card's Read more. (The optional Stage A asks you to pick one role as your lens and hold it.)",
     ],
     reasoning: [
       "When assigning a governance responsibility in the task, ask which of the four mandates it actually serves, then match it to the role whose mandate that is — not to whichever role feels most senior.",
@@ -134,7 +137,7 @@ export const MATERIAL: MicroCard<MaterialSectionId>[] = [
 ];
 
 export const MATERIAL_INTRO = {
-  kicker: "Material · four cards · about 11 minutes",
-  title: "What the task needs, and nothing else",
-  intro: "Four short cards step the view up from managing one metric to steering a whole organisation with them.",
+  kicker: "Material · two cards · about 6 minutes",
+  title: "What your two tasks need, and nothing else",
+  intro: "Open the cards you want — each has a live diagram and a short definition, and the decision rules are one tap deeper.",
 } as const;

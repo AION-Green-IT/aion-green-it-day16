@@ -4,19 +4,24 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LivePanel } from "@/components/ui/LivePanel";
 import { MaterialRefs } from "@/components/ui/MaterialRefs";
 import { AnswerKey } from "@/components/ui/AnswerKey";
-import { ANSWER_KEY, TASK_FRAMING, TASK_MATERIAL_REFS, materialRefs } from "@/lib/route2";
+import { ANSWER_KEY, EXTRA_STAGES, PART_ONE, PART_TWO, TASK_FRAMING, TASK_MATERIAL_REFS, materialRefs } from "@/lib/route2";
 import { StageFrame } from "./StageFrame";
 import { StageGuiding } from "./StageGuiding";
 import { StageSequence } from "./StageSequence";
 import { StageAllocate } from "./StageAllocate";
 import { StageGovernance } from "./StageGovernance";
+import { Handover } from "./Handover";
 import { ReportPanel } from "./ReportPanel";
 import { ExportBar } from "./ExportBar";
 import { useRoute2, domId } from "./useRoute2";
 
-/** The whole task, one continuous scroll across five stages, its live memo assembling beside it. */
+/**
+ * The required task: two connected parts on one scroll — sequence the build,
+ * then govern it — with the live memo assembling beside them and one export.
+ */
 export function Task() {
   const r2 = useRoute2();
+  const done = [r2.stageCComplete, r2.stageEComplete].filter(Boolean).length;
 
   return (
     <section id={domId.task} className="scroll-mt-24 space-y-6">
@@ -31,42 +36,50 @@ export function Task() {
           <MaterialRefs refs={materialRefs(TASK_MATERIAL_REFS)} />
 
           <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage A — Frame it</p>
-            <StageFrame />
-          </div>
-
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage B — Three guiding decisions</p>
-            <StageGuiding />
-          </div>
-
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage C — Build sequence + first move</p>
+            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">
+              {PART_ONE.kicker} · about {PART_ONE.minutes} minutes
+            </p>
             <StageSequence />
           </div>
 
-          <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage D — Trade-off allocation</p>
-            <StageAllocate />
-          </div>
+          <Handover />
 
           <div>
-            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">Stage E — Governance & the call you make now</p>
+            <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">
+              {PART_TWO.kicker} · about {PART_TWO.minutes} minutes
+            </p>
             <StageGovernance />
           </div>
 
           <AnswerKey block={ANSWER_KEY} />
         </div>
 
-        <LivePanel
-          title="Verdeon Management Proposal"
-          summary={`${[r2.stageAComplete, r2.stageBComplete, r2.stageCComplete, r2.stageDComplete, r2.stageEComplete].filter(Boolean).length}/5 stages complete`}
-        >
+        <LivePanel title="Verdeon Management Proposal" summary={`${done}/2 parts complete`}>
           <ReportPanel />
         </LivePanel>
       </div>
 
       <ExportBar />
+    </section>
+  );
+}
+
+/** Optional extras: Stage A, B and D. Nothing here is needed for the export; whatever is filled in is added to it. */
+export function TaskExtra() {
+  return (
+    <section className="space-y-8">
+      <div>
+        <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">{EXTRA_STAGES.frame.kicker}</p>
+        <StageFrame />
+      </div>
+      <div>
+        <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">{EXTRA_STAGES.guiding.kicker}</p>
+        <StageGuiding />
+      </div>
+      <div>
+        <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-accent">{EXTRA_STAGES.allocate.kicker}</p>
+        <StageAllocate />
+      </div>
     </section>
   );
 }

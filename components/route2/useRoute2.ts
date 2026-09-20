@@ -136,35 +136,18 @@ export function useRoute2() {
   const missing: MissingItem[] = [];
   if (!name.trim()) missing.push({ id: domId.name, label: "Your name — needed to label the export" });
 
-  if (!roleLens) missing.push({ id: domId.roleLens, label: "Stage A — pick a role lens" });
-  if (selectedReasons.length !== RELEVANCE_PICK_COUNT) {
-    missing.push({ id: domId.reasons, label: `Stage A — pick exactly ${RELEVANCE_PICK_COUNT} reasons (currently ${selectedReasons.length})` });
-  }
-  if (!relevanceJustification) missing.push({ id: domId.relevanceJustification, label: "Stage A — justification is empty" });
-
-  if (selectedGuiding.length !== GUIDING_PICK_COUNT) {
-    missing.push({ id: domId.guidingPicker, label: `Stage B — pick exactly ${GUIDING_PICK_COUNT} guiding decisions (currently ${selectedGuiding.length})` });
-  }
-  for (const id of selectedGuiding) {
-    if (!guidingJustifications[id]) {
-      missing.push({ id: domId.guidingJustification(id), label: `Stage B — justification for "${GUIDING_DECISIONS.find((d) => d.id === id)!.text.slice(0, 40)}…" is empty` });
-    }
-  }
+  // Stage A, B and D are optional extras: they never appear in the missing list.
 
   for (const l of LAYERS) {
-    if (sequence[l.id] === null) missing.push({ id: domId.sequenceBoard, label: `Stage C — ${l.name} not placed in the sequence yet` });
+    if (sequence[l.id] === null) missing.push({ id: domId.sequenceBoard, label: `Part 1 — ${l.name} not placed in the sequence yet` });
   }
-  if (!firstMove) missing.push({ id: domId.firstMove, label: "Stage C — no concrete first move written yet" });
-
-  if (allocationTotal !== ALLOCATION_TOTAL) {
-    missing.push({ id: domId.allocator, label: `Stage D — allocation totals ${allocationTotal}, needs to total exactly 100` });
-  }
+  if (!firstMove) missing.push({ id: domId.firstMove, label: "Part 1 — no concrete first move written yet" });
 
   for (const r of unassignedResponsibilities) {
-    missing.push({ id: domId.governanceBoard, label: `Stage E — "${r.name}" not assigned to a role yet` });
+    missing.push({ id: domId.governanceBoard, label: `Part 2 — "${r.name}" not assigned to a role yet` });
   }
-  if (!nowDecision) missing.push({ id: domId.nowDecision, label: "Stage E — the decision to take now is empty" });
-  if (!riskOfWaiting) missing.push({ id: domId.riskOfWaiting, label: "Stage E — the risk of waiting is empty" });
+  if (!nowDecision) missing.push({ id: domId.nowDecision, label: "Part 2 — the decision to take now is empty" });
+  if (!riskOfWaiting) missing.push({ id: domId.riskOfWaiting, label: "Part 2 — the risk of waiting is empty" });
 
   return {
     hydrated,
@@ -202,6 +185,11 @@ export function useRoute2() {
     nowDecision,
     riskOfWaiting,
     stageEComplete,
+
+    // Optional extras: attempted, so the report and the export can include them.
+    extraA: !!roleLens || selectedReasons.length > 0 || !!relevanceJustification,
+    extraB: selectedGuiding.length > 0,
+    extraD: allocationTotal > 0,
 
     missing,
     allComplete: missing.length === 0,

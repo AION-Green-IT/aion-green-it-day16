@@ -282,13 +282,13 @@ export const MATERIAL2: MicroCard<MaterialSectionId>[] = [
 ];
 
 export const MATERIAL1_INTRO = {
-  kicker: "Material 1 · four cards · about 10 minutes",
-  title: "What Task 1 needs, and nothing else",
-  intro: "Four short cards: the definition and a live diagram are always on screen; the decision rules are one tap away.",
+  kicker: "Material · four cards · about 10 minutes",
+  title: "What your task needs, and nothing else",
+  intro: "Open the cards you want — each has a live diagram and a short definition, and the decision rules are one tap deeper.",
 } as const;
 
 export const MATERIAL2_INTRO = {
-  kicker: "Material 2 · three cards · about 8 minutes",
-  title: "What Task 2 needs, and nothing else",
+  kicker: "Optional material · three cards · about 8 minutes",
+  title: "What the second task needs, and nothing else",
   intro: "Three short cards step the question up from “is this metric any good?” to “which whole line of measures do we fund first?”.",
 } as const;

@@ -64,8 +64,9 @@ export function ReportPanel1() {
           );
         })}
 
+        {r1.metricsAnswered > 0 && (
         <div className="border-t border-line pt-3">
-          <p className="text-micro font-semibold uppercase tracking-wide text-accent">Effective vs merely informative</p>
+          <p className="text-micro font-semibold uppercase tracking-wide text-accent">Extra · Effective vs merely informative</p>
           <ul className="mt-1.5 space-y-1">
             {r1.metricStates.map((m) => (
               <li key={m.id} className="flex items-start justify-between gap-2 text-micro text-ink">
@@ -77,9 +78,11 @@ export function ReportPanel1() {
             ))}
           </ul>
         </div>
+        )}
 
+        {r1.horizonPlacedCount > 0 && (
         <div className="border-t border-line pt-3">
-          <p className="text-micro font-semibold uppercase tracking-wide text-accent">Short-term vs structural</p>
+          <p className="text-micro font-semibold uppercase tracking-wide text-accent">Extra · Short-term vs structural</p>
           <ul className="mt-1.5 space-y-1">
             {r1.horizonStates.map((h) => (
               <li key={h.id} className="flex items-start justify-between gap-2 text-micro text-ink">
@@ -91,6 +94,7 @@ export function ReportPanel1() {
             ))}
           </ul>
         </div>
+        )}
       </div>
     </div>
   );

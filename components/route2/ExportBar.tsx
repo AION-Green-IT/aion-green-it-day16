@@ -40,7 +40,7 @@ export function ExportBar() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <button type="button" onClick={() => setShowMissing((v) => !v)} className="flex flex-wrap items-center gap-x-1.5 text-caption text-ash hover:text-ink">
           <span>
-            <span className="tabular-nums font-semibold text-ink">{[r2.stageAComplete, r2.stageBComplete, r2.stageCComplete, r2.stageDComplete, r2.stageEComplete].filter(Boolean).length}</span>/5 stages complete
+            <span className="tabular-nums font-semibold text-ink">{[r2.stageCComplete, r2.stageEComplete].filter(Boolean).length}</span>/2 parts complete
           </span>
           {r2.missing.length > 0 && (
             <>

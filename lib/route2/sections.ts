@@ -13,6 +13,10 @@ export const MATERIAL_ORDER: MaterialSectionId[] = [
   "rolePriorities",
 ];
 
+/** Required cards (D2, D4): exactly what Part 1 and Part 2 draw on. D1 and D3 are optional extras. */
+export const MATERIAL_REQUIRED: MaterialSectionId[] = ["layeredModel", "rolePriorities"];
+export const MATERIAL_OPTIONAL: MaterialSectionId[] = ["leadershipInstrument", "tradeoffPentagon"];
+
 export function materialAnchorId(id: MaterialSectionId): string {
   return `r2-card-${id}`;
 }

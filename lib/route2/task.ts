@@ -449,11 +449,27 @@ export const RISK_OF_WAITING_FIELD = {
 // ---------------------------------------------------------------------------
 
 export const TASK_FRAMING = {
-  tag: "THE TASK",
-  title: "Management proposal for Verdeon Digital Governance Group",
-  minutes: 20,
+  tag: "YOUR TASKS",
+  title: "Sequence the build, then govern it",
+  minutes: 14,
   instruction:
-    "Five stages on one scroll: frame it, pick three guiding decisions, sequence the build, allocate priority across the five factors, then assign governance and make the call you would make now.",
+    "Two connected parts on one scroll. Part 1: put the three layers of the management model in order and write your first move. Part 2: hand four responsibilities to the roles they belong to, and make the call you would take now.",
+} as const;
+
+export const PART_ONE = { kicker: "PART 1 · SEQUENCE THE BUILD", minutes: 6 } as const;
+export const PART_TWO = { kicker: "PART 2 · GOVERN IT", minutes: 8 } as const;
+
+/** The optional drawer that follows the required parts. */
+export const EXTRA_DRAWER = {
+  title: "Extra practice",
+  summary:
+    "Nothing here is needed for your export. Two more cards (the leadership-instrument test and the five-factor trade-off) and three more stages — frame the proposal, choose three twelve-month decisions, and allocate priority across five factors (about 20 minutes). Whatever you fill in is added to the export.",
+} as const;
+
+export const EXTRA_STAGES = {
+  frame: { kicker: "EXTRA 1 · FRAME IT" },
+  guiding: { kicker: "EXTRA 2 · THREE GUIDING DECISIONS" },
+  allocate: { kicker: "EXTRA 3 · TRADE-OFF ALLOCATION" },
 } as const;
 
 export const CHECK_LABELS = {
@@ -526,7 +542,7 @@ export const ANSWER_KEY: AnswerKeyBlock = {
 };
 
 /** Material this task draws on, for MaterialRefs chips. */
-export const TASK_MATERIAL_REFS: MaterialSectionId[] = ["leadershipInstrument", "layeredModel", "tradeoffPentagon", "rolePriorities"];
+export const TASK_MATERIAL_REFS: MaterialSectionId[] = ["layeredModel", "rolePriorities"];
 
 /** The question each factor makes a manager ask — used to describe a shift in thinking. */
 export const FACTOR_QUESTION: Record<FactorId, string> = {

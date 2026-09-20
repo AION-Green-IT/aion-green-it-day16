@@ -13,15 +13,15 @@ export function Material2() {
     <div className="space-y-8">
       <SectionHeading kicker={MATERIAL2_INTRO.kicker} title={MATERIAL2_INTRO.title} intro={MATERIAL2_INTRO.intro} />
 
-      <MicroCard card={m5} anchorId={materialAnchorId("pdcaLoop")} total={MATERIAL2.length}>
+      <MicroCard card={m5} anchorId={materialAnchorId("pdcaLoop")} total={MATERIAL2.length} optional>
         <PdcaLoop />
       </MicroCard>
 
-      <MicroCard card={m6} anchorId={materialAnchorId("tradeoffTriangle")} total={MATERIAL2.length}>
+      <MicroCard card={m6} anchorId={materialAnchorId("tradeoffTriangle")} total={MATERIAL2.length} optional>
         <TradeoffTriangle />
       </MicroCard>
 
-      <MicroCard card={m7} anchorId={materialAnchorId("threeLines")} total={MATERIAL2.length} extra={<CriteriaGuide />}>
+      <MicroCard card={m7} anchorId={materialAnchorId("threeLines")} total={MATERIAL2.length} optional extra={<CriteriaGuide />}>
         <ThreeLinesPreview />
       </MicroCard>
     </div>

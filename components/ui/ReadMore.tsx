@@ -4,8 +4,18 @@ import { useEffect, useId, useState } from "react";
 import clsx from "clsx";
 import { ChevronDown } from "@/components/icons/LineIcons";
 
-/** Event a MaterialRefs chip fires so the card it points at opens its Read more first. */
+/**
+ * Event that opens a material card (and, when `readMore` is true, its Read
+ * more). A task's MaterialRefs chip fires it with `readMore: true` because the
+ * decision rules live there; the sticky mini-nav fires it with `readMore:
+ * false`. Listeners: `MicroCard` and `OptionalPanel`.
+ */
 export const OPEN_MATERIAL_EVENT = "aion:open-material";
+export type OpenMaterialDetail = { id: string; readMore: boolean };
+
+export function openMaterial(id: string, readMore: boolean) {
+  window.dispatchEvent(new CustomEvent<OpenMaterialDetail>(OPEN_MATERIAL_EVENT, { detail: { id, readMore } }));
+}
 
 /**
  * A collapsed "read more" disclosure for optional depth. The definition stays
@@ -13,35 +23,29 @@ export const OPEN_MATERIAL_EVENT = "aion:open-material";
  * purpose. Closed by default, no animation library — the open state reuses
  * the shared `reveal-in` keyframe.
  *
- * `openOn` is the DOM id of the card this disclosure belongs to. When a task's
- * MaterialRefs chip jumps to that card, the decision rules live in here, so the
- * disclosure opens itself.
+ * `openSignal` is bumped by the card that owns this disclosure when a task's
+ * MaterialRefs chip points at it: any change to a non-zero value opens it.
  */
 export function ReadMore({
   label = "Read more",
   hint,
-  openOn,
+  openSignal = 0,
   children,
   className,
 }: {
   label?: string;
   /** What is inside, so the learner knows what they would be opening. */
   hint?: string;
-  openOn?: string;
+  openSignal?: number;
   children: React.ReactNode;
   className?: string;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(openSignal > 0);
   const panelId = useId();
 
   useEffect(() => {
-    if (!openOn) return;
-    const handler = (e: Event) => {
-      if ((e as CustomEvent<string>).detail === openOn) setOpen(true);
-    };
-    window.addEventListener(OPEN_MATERIAL_EVENT, handler);
-    return () => window.removeEventListener(OPEN_MATERIAL_EVENT, handler);
-  }, [openOn]);
+    if (openSignal > 0) setOpen(true);
+  }, [openSignal]);
 
   return (
     <div className={className}>

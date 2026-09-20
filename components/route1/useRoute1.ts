@@ -212,17 +212,9 @@ export function useRoute1() {
       task1Missing.push({ id: domId.approach(a.id), label: `${a.name} — no first improvement approach written yet` });
     }
   }
-  for (const m of metricStates) {
-    if (!m.answer) {
-      task1Missing.push({ id: domId.metric(m.id), label: `Stage B, metric ${m.n} — qualifying question not answered yet` });
-    }
-  }
-  for (const h of horizonStates) {
-    if (!h.lane) {
-      task1Missing.push({ id: domId.horizonItem(h.id), label: `Stage C, item ${h.n} — not sorted yet` });
-    }
-  }
+  // Stage B and Stage C are optional extras: they never appear in the missing list.
   const task1Complete = task1Missing.length === 0;
+  const extraAnswered = metricsAnswered > 0 || horizonPlacedCount > 0;
 
   // -- Task 2 ----------------------------------------------------------------
   const options: OptionAssessment[] = OPTION_LINES.map((opt) => {
@@ -294,6 +286,7 @@ export function useRoute1() {
     horizonPlacedCount,
     task1Missing,
     task1Complete,
+    extraAnswered,
 
     // Task 2
     options,

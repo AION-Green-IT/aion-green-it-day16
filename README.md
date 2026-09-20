@@ -12,19 +12,31 @@ UI primitives are reused as-is. What changed is the content, the depth of the ma
 feedback, and one structural deviation.
 
 **Route 1 keeps two exports, on purpose.** CLAUDE.md §12 asks for one merged export per route. This
-day's build brief names two separate deliverables for Route 1 — one per material-then-task pair — so
-Route 1 is two short pairs, each with its own export, rather than one continuous block. Route 2 has
-one level, one task, one export. Flagged here rather than picked silently.
+day's build brief names two separate deliverables for Route 1, so the required task has its own export and
+the optional Task 2 has its own. Route 2 has one task in two connected parts and one export. Flagged here
+rather than picked silently.
 
-## Routes
+## Routes — a short required path, everything else optional
 
-| Route | Levels | Case | Material | Task | Export |
+The standard is Day 14's: a short, honest required path per route, with **nothing deleted** — whatever
+does not fit is kept in an **optional "Extra practice" drawer** (closed by default). Material is opened
+when the learner wants it: every card is a row until tapped.
+
+| Route | Case | Required material | Required task | Required export | Optional drawer |
 |---|---|---|---|---|---|
-| `/route-1-kpis-and-monitoring` | 1–2 | Clarity Digital Services | M1–M4 (~10 min) then M5–M7 (~8 min) | Task 1 Diagnose (~15 min), Task 2 Decide (~15 min) | `1-{name}-day16-l1task1` and `1-{name}-day16-l2task2` PDFs |
-| `/route-2-management-decision` | 3 | Verdeon Digital Governance Group | D1–D4 (~11 min) | Five-stage management proposal (~20 min) | `1-{name}-day16-l3task1` PDF |
+| `/route-1-kpis-and-monitoring` | Clarity Digital Services | M1–M4, four cards (~10 min) | **Diagnose** — ten signals into six areas, one first improvement per area (~15 min) | `1-{name}-day16-l1task1` | Extra 1 and 2 (classify six metrics, sort six moves), cards M5–M7, and Task 2 (which line to fund first) with its own export `1-{name}-day16-l2task2` |
+| `/route-2-management-decision` | Verdeon Digital Governance Group | D2 and D4, two cards (~6 min) | **Part 1 Sequence the build** → handover → **Part 2 Govern it** (~14 min, one connected task) | `1-{name}-day16-l3task1` | Cards D1 and D3, and three stages: Frame it, three guiding decisions, trade-off allocation |
 
-Route minutes on the landing page are material plus task: Route 1 ≈ 48, Route 2 ≈ 31. Read more depth is
-optional and not counted.
+Route minutes on the landing page are the required path: Route 1 ≈ 25, Route 2 ≈ 20. The drawer is not counted.
+
+- **What "required" means in code:** only the required parts appear in the missing list and gate nothing (the
+  export button is still never disabled). Optional parts you fill in are **added to the export**
+  (marked "Extra") and to the live report; untouched ones are left out.
+- **Material ↔ task:** every term a required task uses is defined in a required card. Route 1: M1 (three
+  links), M2 (layers), M3 (six areas), M4 (gates, short-term vs structural). Route 2: D2 (layers, first move,
+  the call now and the risk of waiting) and D4 (roles, responsibilities). A MaterialRefs chip opens the card
+  and its Read more, and if the card is in the drawer it opens the drawer first.
+- **Mentor fill** fills the required and the optional parts in one click.
 
 ## How a material card works now
 
@@ -70,7 +82,7 @@ gates — with a key of the six gates under the question.
 
 ## Route 1 — task upgrades
 
-- **Task 1:** every area shows *look for* and *tell apart from its neighbour* at the point of use; Stage B shows the six-gate key;
+- **Task 1 (required, Stage A):** the diagnosis board. **Extras 1–2** (formerly Stage B and C) and **Task 2** are optional. Details: every area shows *look for* and *tell apart from its neighbour* at the point of use; Stage B shows the six-gate key;
   Stage B's answer pill is neutral (colour is reserved for a verdict); ✓ green / ✕ red verdicts with a
   neutral clue, **cleared when the answer or placement changes**.
 - **Task 2:** each line lists **What it involves**; under each of the 21 ratings sits a **neutral fact**
@@ -100,24 +112,24 @@ gates — with a key of the six gates under the question.
 
 | Task step / option | Defined in | Where the rule lives | Interactive that rehearses it |
 |---|---|---|---|
-| T1-A six areas; second tag | M3 | visible definition + Read more rules | M3 chips and practice sentences |
-| T1-A improvement per area | M4 | short-term vs structural (visible) | M4 fix tally |
-| T1-B target, owner, decision | M1 | visible definition | M1 wired-check |
-| T1-B six gates, sound AND wired | M4 | visible definition + gate list in Read more | M4 gate filter |
-| T1-B "activity is not enough" | M2 | visible definition | M2 layer ladder |
-| T1-C short-term vs structural | M4 | visible definition | M4 fixes (short-term / structural) |
-| T2 Lines A, B, C | M7 | visible definition; *involves* on each line in the task | M7 condition matrix |
-| T2 seven criteria | M7 Read more (`CriteriaGuide`); M6 (informative value, controllability); M5 (steering, long-term) | Read more + key in the task | M6 triangle, M5 loop |
-| T2 conditions (budget, visible progress, incomplete data, simple reports, IT usability) | M7 | matrix of neutral facts | M7 condition matrix |
-| T2 attractive-but-weak risks | M7 | visible trap sentence | M7 dashboard ± review |
-| T2 review cycle, owner | M5 | visible definition | M5 loop |
-| R2-A four role lenses | D4 | visible definition + Read more role guide | D4 role lab |
-| R2-A reasons (CSRD/ESRS/EED) | D1 Read more + glossary | glossary panels | — |
-| R2-B eight guiding decisions | D2 Read more (`GuidingOptionsGuide`) | means / use when / watch out; also under each option | D2 staircase (rationale for staging) |
-| R2-C three layers + first move | D2 | visible definition | D2 build orders |
-| R2-D five factors | D3 | visible definition | D3 pentagon lab |
-| R2-E four responsibilities | D4 Read more (`ResponsibilitiesGuide`) | means; consequences under each placement | D4 role lab |
-| R2-E roles | D4 | visible mandates + Read more | D4 role lab |
+| T1-A (required) six areas; second tag | M3 | visible definition + Read more rules | M3 chips and practice sentences |
+| T1-A (required) improvement per area | M4 | short-term vs structural (visible) | M4 fix tally |
+| T1-B (optional) target, owner, decision | M1 | visible definition | M1 wired-check |
+| T1-B (optional) six gates, sound AND wired | M4 | visible definition + gate list in Read more | M4 gate filter |
+| T1-B (optional) "activity is not enough" | M2 | visible definition | M2 layer ladder |
+| T1-C (optional) short-term vs structural | M4 | visible definition | M4 fixes (short-term / structural) |
+| T2 (optional) Lines A, B, C | M7 | visible definition; *involves* on each line in the task | M7 condition matrix |
+| T2 (optional) seven criteria | M7 Read more (`CriteriaGuide`); M6 (informative value, controllability); M5 (steering, long-term) | Read more + key in the task | M6 triangle, M5 loop |
+| T2 (optional) conditions (budget, visible progress, incomplete data, simple reports, IT usability) | M7 | matrix of neutral facts | M7 condition matrix |
+| T2 (optional) attractive-but-weak risks | M7 | visible trap sentence | M7 dashboard ± review |
+| T2 (optional) review cycle, owner | M5 | visible definition | M5 loop |
+| R2-A (optional) four role lenses | D4 | visible definition + Read more role guide | D4 role lab |
+| R2-A (optional) reasons (CSRD/ESRS/EED) | D1 Read more + glossary | glossary panels | — |
+| R2-B (optional) eight guiding decisions | D2 Read more (`GuidingOptionsGuide`) | means / use when / watch out; also under each option | D2 staircase (rationale for staging) |
+| R2-C = Part 1 (required) three layers + first move | D2 | visible definition | D2 build orders |
+| R2-D (optional) five factors | D3 | visible definition | D3 pentagon lab |
+| R2-E = Part 2 (required) four responsibilities | D4 Read more (`ResponsibilitiesGuide`) | means; consequences under each placement | D4 role lab |
+| R2-E = Part 2 (required) roles | D4 | visible mandates + Read more | D4 role lab |
 
 ## Defensible answers (mentor keys)
 

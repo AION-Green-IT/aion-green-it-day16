@@ -596,20 +596,30 @@ export const HORIZON_ITEMS: HorizonItem[] = [
 // ---------------------------------------------------------------------------
 
 export const TASK1_FRAMING = {
-  tag: "TASK 1 · DIAGNOSE",
+  tag: "YOUR TASK · DIAGNOSE",
   title: "Which metrics really help?",
   minutes: 15,
   instruction:
-    "Diagnose why the data isn't steering anything, and sketch one robust first improvement per area. No deep metric knowledge needed — this is a management and reporting problem.",
+    "Place each of the ten signals into the area it most directly evidences, then sketch one robust first improvement per area. No deep metric knowledge needed — this is a management and reporting problem.",
 } as const;
 
 export const WORK_ASSIGNMENT_T1: string[] = [
   "Drag each of the ten signal cards into the area it most directly evidences. Each area shows what to look for and the question that tells it apart from its neighbour. A second tag is optional where a signal genuinely touches two areas.",
-  "Write one robust first improvement approach for each of the six areas.",
-  "For six candidate metrics, answer the one qualifying question against the six gates and see whether each resolves into Effective for Management or Merely Informative.",
-  "Sort six concrete moves into what's buildable short-term versus what has to be built structurally.",
-  "Use Check whenever you want feedback: ✓ means it holds up, ✕ means not yet — with a clue to reason from, never the answer. Change an answer and the verdict clears.",
+  "Write one robust first improvement approach for each of the six areas. Cards M3 (the six areas) and M4 (short-term vs structural fixes) say what to write.",
+  "Use Check whenever you want feedback: ✓ means it holds up, ✕ means not yet — with a clue to reason from, never the answer. Change a placement and the verdict clears.",
 ];
+
+/** The optional drawer that follows the required task. */
+export const EXTRA_DRAWER = {
+  title: "Extra practice",
+  summary:
+    "Nothing here is needed for your export. Two more classification exercises on the same material (about 10 minutes), then three more cards and a second task — which line of measures to fund first (about 25 minutes, with its own export).",
+} as const;
+
+export const TASK1_EXTRA = {
+  stageB: { kicker: "EXTRA 1 · CLASSIFY", title: "Informative vs management-effective" },
+  stageC: { kicker: "EXTRA 2 · CLASSIFY", title: "Short-term vs structural" },
+} as const;
 
 /** One export for Task 1 only. Filename: `1-{name}-day16-l1task1`. */
 export const EXPORT1 = {

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { scrollToAndFlash } from "@/lib/scrollToAndFlash";
+import { openMaterial } from "@/components/ui/ReadMore";
 
 export type MiniNavItem = { id: string; code: string; label: string; anchorId: string };
 
@@ -92,7 +93,10 @@ export function MiniNav({
               <li key={item.id}>
                 <button
                   type="button"
-                  onClick={() => scrollToAndFlash(item.anchorId, "ref")}
+                  onClick={() => {
+                    openMaterial(item.anchorId, false);
+                    window.setTimeout(() => scrollToAndFlash(item.anchorId, "ref"), 120);
+                  }}
                   onMouseEnter={() => setHovered(item.id)}
                   onMouseLeave={() => setHovered(null)}
                   onFocus={() => setHovered(item.id)}

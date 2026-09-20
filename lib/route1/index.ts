@@ -59,7 +59,7 @@ export const R1_KEY_PREFIXES = ["r1:t1:", "r1:t2:"];
 export const PAGE_INTRO = {
   tag: "ROUTE 1 — KPIS, OPTIMISATION & MONITORING",
   title: "Capturing & Visualising Sustainability Targets",
-  body: "Module 12. Many organisations measure a great deal and manage very little: a figure can be accurate, even impressive, and still change nothing because it was never wired to a target, an owner and a decision. Two short pairs of material and task follow — first the vocabulary and a diagnosis, then the trade-offs behind choosing which line of measures to build first.",
+  body: "Module 12. Many organisations measure a great deal and manage very little: a figure can be accurate, even impressive, and still change nothing because it was never wired to a target, an owner and a decision. Four short cards and one task give you the vocabulary and a diagnosis; optional extras go further.",
 } as const;
 
 /** Stated once, above both pairs, and never re-introduced mid-page. */
@@ -70,9 +70,9 @@ export const ENGAGEMENT = {
   brief:
     "Clarity Digital Services has already introduced several Green IT measures — more efficient device procurement, longer usage cycles, first data-centre optimisations, and rules for resource use. Management now wants a dashboard and a reporting system that make progress visible.",
   mandate:
-    "Today, only scattered individual figures exist, with no clear management logic. Task 1: diagnose why the data isn't yet steering anything, and sketch a first improvement per area. Task 2: step up a level — with only one line of measures fundable first, prioritise and defend a choice under incomplete data.",
+    "Today, only scattered individual figures exist, with no clear management logic. Your task: diagnose why the data isn't yet steering anything, and sketch a first improvement per area. If you want more, an optional drawer at the end adds two classification exercises and a second task — which line of measures to fund first, under incomplete data.",
   deliverable:
-    "You leave with two short documents: the Clarity Digital Services Metrics Diagnosis (Task 1) and the Priority Line Decision (Task 2).",
+    "You leave with the Clarity Digital Services Metrics Diagnosis. The optional second task adds a Priority Line Decision, with its own export.",
 } as const;
 
 export const NAME_FIELD = {
