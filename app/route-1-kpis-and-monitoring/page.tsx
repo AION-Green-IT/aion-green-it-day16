@@ -28,7 +28,7 @@ const ROUTE = ROUTES[0];
 export const metadata: Metadata = {
   title: `AION Green IT — Day 16 · ${ROUTE.tag}`,
   description:
-    "Why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective — then diagnose Clarity Digital Services' scattered metrics. Optional extras add a second task on prioritising a line of measures.",
+    "Why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective — then diagnose Clarity Digital Services' scattered metrics.",
 };
 
 /**

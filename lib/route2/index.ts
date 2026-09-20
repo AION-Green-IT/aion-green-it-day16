@@ -48,7 +48,7 @@ export const ENGAGEMENT = {
     "Verdeon Digital Governance Group already runs real Green IT measures, but there is no consistent KPI system, no practicable carbon logic, no effective review process, and no clear ownership. IT, sustainability, controlling, finance, and management all want different things from the same data.",
   mandate:
     "Budget is limited but management wants visible, credible progress. External reporting requirements are rising. There is a real risk the system becomes too complex to run. Recommend a decision-ready management proposal — a decision architecture, not a metrics list — despite the incomplete picture. You do it in two connected parts: sequence the build, then govern it.",
-  deliverable: "You leave with one document: the Verdeon Digital Governance Group Management Proposal. Optional extra practice adds sections to it if you fill them in.",
+  deliverable: "You leave with one document: the Verdeon Digital Governance Group Management Proposal.",
 } as const;
 
 export const NAME_FIELD = {

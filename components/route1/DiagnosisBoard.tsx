@@ -292,6 +292,7 @@ function PlacedCard({
   const setNote = useProgress((s) => s.setNote);
   // A verdict belongs to the placement it checked: it disappears the moment the area changes.
   const [checked, setChecked] = useState<{ area: AreaId | null; res: CheckResult } | null>(null);
+  const [showSecond, setShowSecond] = useState(false);
   const result = checked && checked.area === state.area ? checked.res : null;
 
   const runCheck = () => {
@@ -339,10 +340,12 @@ function PlacedCard({
         <CheckVerdict result={result} holdsLabel={CHECK_LABELS.holds} notYetLabel={result && !result.holds && result.tier === "sharp" ? CHECK_LABELS.wrongTier2 : CHECK_LABELS.wrongTier1} />
       </div>
 
-      {/* Optional secondary tag */}
+      {/* Optional secondary tag — hidden behind a small link unless one is already set */}
       <div>
-        <p className="text-micro text-ash">Also relevant to (optional)</p>
-        <div className="mt-1 flex flex-wrap gap-1">
+        <button type="button" onClick={() => setShowSecond((v) => !v)} aria-expanded={showSecond || !!state.secondaryArea} className="text-micro text-ash/70 underline decoration-dotted underline-offset-2 hover:text-ash">
+          {state.secondaryArea ? `Second tag: ${areaById(state.secondaryArea).name}` : showSecond ? "Hide second tag" : "+ second tag"}
+        </button>
+        <div className={clsx("mt-1 flex flex-wrap gap-1", !(showSecond || state.secondaryArea) && "hidden")}>
           {otherAreas.map((a) => {
             const on = state.secondaryArea === a.id;
             return (

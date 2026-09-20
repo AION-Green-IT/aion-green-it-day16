@@ -84,7 +84,7 @@ export const ROUTES: Route[] = [
     title: "Route 1 — KPIs, Optimisation & Monitoring",
     cardTitle: "KPIs, Optimisation & Monitoring",
     cardBlurb:
-      "Four short cards — why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective — then one task: diagnose Clarity Digital Services' scattered metrics. Optional extras go further: two more classification exercises, continuous optimisation, and a second task on which line of measures to fund first.",
+      "Four short cards — why data collected isn't the same as data managed, the three metric layers, the six areas a Green IT metric system needs, and what makes a KPI management-effective — then one task: diagnose Clarity Digital Services' scattered metrics.",
     deliverable: "Clarity Digital Services — Metrics Diagnosis",
     levels: [1, 2],
     minutes: 25,
@@ -98,7 +98,7 @@ export const ROUTES: Route[] = [
     title: "Route 2 — Management Decision",
     cardTitle: "Management Decision",
     cardBlurb:
-      "Two short cards — staging a management model in layers, and how different roles prioritise differently — then two connected tasks at Verdeon Digital Governance Group: sequence the build, then govern it and make the call now. Optional extras add framing, twelve-month decisions and the five-factor trade-off.",
+      "Two short cards — staging a management model in layers, and how different roles prioritise differently — then two connected tasks at Verdeon Digital Governance Group: sequence the build, then govern it and make the call now.",
     deliverable: "Verdeon Digital Governance Group — Management Proposal",
     levels: [3],
     minutes: 20,

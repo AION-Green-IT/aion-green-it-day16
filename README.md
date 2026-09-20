@@ -19,8 +19,10 @@ rather than picked silently.
 ## Routes — a short required path, everything else optional
 
 The standard is Day 14's: a short, honest required path per route, with **nothing deleted** — whatever
-does not fit is kept in an **optional "Extra practice" drawer** (closed by default). Material is opened
-when the learner wants it: every card is a row until tapped.
+does not fit is kept in an **optional "Extra practice" drawer**. Closed, it is a single small, quiet link at
+the foot of the page — no card, no teaser — so the learner has to go looking for it. Material is opened when
+the learner wants it: every card is a row until tapped. The second area tag on a signal card is likewise a
+small "+ second tag" link.
 
 | Route | Case | Required material | Required task | Required export | Optional drawer |
 |---|---|---|---|---|---|

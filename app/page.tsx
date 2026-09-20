@@ -27,8 +27,7 @@ export default function DayLanding() {
           Route 1 is four short cards and one task — the six-area diagnostic for why Clarity Digital Services'
           metrics don't yet steer anything. Route 2 steps up to the management view: two short cards and two
           connected tasks at Verdeon Digital Governance Group — sequence the build, then govern it and make the one
-          call to take now, despite an incomplete picture. Every route also has an optional drawer of extra practice;
-          nothing in it is needed for the export.
+          call to take now, despite an incomplete picture.
         </p>
       </div>
 
